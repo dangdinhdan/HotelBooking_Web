@@ -23,7 +23,8 @@ namespace HotelBooking_Web.Areas.Admin.Controllers
             var pageSize = 10;
             int pageIndex = page ?? 1;
             
-            var items = db.tbl_Phongs.Where(x => x.isDelete == null || x.isDelete == false).OrderByDescending(x=>x.PhongID).ToPagedList(pageIndex, pageSize);
+            var items = db.vw_DanhSachPhongs.Where(x => x.isDelete == null || x.isDelete == false).OrderByDescending(x=>x.PhongID).ToPagedList(pageIndex, pageSize);
+            
             return View(items);
         }
 

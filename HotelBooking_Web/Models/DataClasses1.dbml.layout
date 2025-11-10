@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 9.375" name="DataClasses1">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.375, 9.375" name="DataClasses1">
   <DataContextMoniker Name="/DataClasses1DataContext" />
   <nestedChildShapes>
     <classShape Id="afe086b3-36e0-4976-8e10-659ff74d7732" absoluteBounds="0.75, 2.25, 2, 1.7708968098958326">
@@ -44,35 +44,35 @@
         <elementListCompartment Id="b34e5845-f25e-42fc-8442-a45834dc2a2d" absoluteBounds="3.515, 2.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 2.28929768880208); (9 : 2.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 2.28929768880208); (9 : 2.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_DatPhong/tbl_DatPhong_tbl_ChiTietDatPhong" />
       <nodes>
         <classShapeMoniker Id="30c23b5e-c27a-410b-a4c9-98d0c962ffe2" />
         <classShapeMoniker Id="0b03567c-43f8-4001-8e38-3311a1da7a1a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 4.2901025390625); (7.25 : 5.4374995); (3 : 5.4374995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.25 : 4.2901025390625); (7.25 : 5.4374995); (3 : 5.4374995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_DatPhong/tbl_DatPhong_tbl_GiaoDich" />
       <nodes>
         <classShapeMoniker Id="30c23b5e-c27a-410b-a4c9-98d0c962ffe2" />
         <classShapeMoniker Id="04379f23-ba1a-401d-bcef-878a49dee2b5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 7.55850341796875); (10 : 7.55850341796875); (10 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 7.55850341796875); (10 : 7.55850341796875); (10 : 2.82859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_Phong/tbl_Phong_tbl_ChiTietDatPhong" />
       <nodes>
         <classShapeMoniker Id="a3de1b6b-4e35-4bc7-974b-e16ee98104bb" />
         <classShapeMoniker Id="0b03567c-43f8-4001-8e38-3311a1da7a1a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.45274983723958); (6.25 : 7.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.45274983723958); (6.25 : 7.45274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_LoaiPhong/tbl_LoaiPhong_tbl_Phong" />
       <nodes>
         <classShapeMoniker Id="b4ad1978-cbd3-4e54-81cf-2460529c3617" />
         <classShapeMoniker Id="a3de1b6b-4e35-4bc7-974b-e16ee98104bb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.02005126953125); (6.25 : 3.02005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.02005126953125); (6.25 : 3.02005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_TaiKhoan/tbl_TaiKhoan_tbl_DatPhong" />
       <nodes>
         <classShapeMoniker Id="7e86b33a-9468-4401-a346-732f966c21fa" />
@@ -86,5 +86,11 @@
         <classShapeMoniker Id="7e86b33a-9468-4401-a346-732f966c21fa" />
       </nodes>
     </associationConnector>
+    <classShape Id="7ca2dc87-56d9-49b4-8dbe-d715a9dc6a37" absoluteBounds="14.125, 4.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataClasses1DataContext/vw_DanhSachPhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ecc24cc-3019-48ea-9fa9-0f8964cb34f6" absoluteBounds="14.14, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

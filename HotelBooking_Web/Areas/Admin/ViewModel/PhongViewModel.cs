@@ -11,4 +11,5 @@ namespace HotelBooking_Web.Models
         public tbl_LoaiPhong LoaiPhong { get; set; }
         public IEnumerable<tbl_LoaiPhong> DSLP { get; set; }
     }
+
 }

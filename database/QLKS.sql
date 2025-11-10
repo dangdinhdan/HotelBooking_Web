@@ -80,7 +80,22 @@ CREATE TABLE tbl_GiaoDich(
 );
 go
 
+CREATE OR ALTER VIEW vw_DanhSachPhong AS
+SELECT P.PhongID,
+		P.SoPhong,
+		P.GiaMoiDem,
+		P.MoTa,
+		P.HinhAnh,
+		p.SucChuaToiDa,
+		P.Create_at,
+		P.isDelete,
+		P.Delete_at,
+		P.Update_at,
+		LP.TenLoaiPhong
 
+FROM tbl_Phong P
+JOIN tbl_LoaiPhong LP ON P.LoaiPhongID= LP.LoaiPhongID
+GO
 CREATE or alter VIEW vw_ThongKeDoanhThu AS
 SELECT 
     YEAR(gd.NgayThanhToan) AS Nam,

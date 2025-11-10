@@ -1,4 +1,4 @@
-﻿@model PagedList.PagedList<HotelBooking_Web.Models.tbl_Phong>
+﻿@model PagedList.PagedList<HotelBooking_Web.Models.vw_DanhSachPhong>
 @using PagedList.Mvc;
 @using PagedList; 
 @{
@@ -45,6 +45,7 @@
                                     <th>STT</th>
                                     <th>ảnh</th>
                                     <th>Mã phòng</th>
+                                    <th>Loại Phòng</th>
                                     <th>Giá mỗi đêm</th>
                                     <th>Sức chứa</th>
                                     <th>Mô tả</th>
@@ -61,6 +62,7 @@
                                             <td>@i</td>
                                             <td><img class="img-size-50" src="@item.HinhAnh" /></td>
                                             <td>@item.SoPhong</td>
+                                            <td>@item.TenLoaiPhong</td>
                                             <td>@item.GiaMoiDem</td>
                                             <td>@item.SucChuaToiDa</td>
                                             <td>@item.MoTa</td>
