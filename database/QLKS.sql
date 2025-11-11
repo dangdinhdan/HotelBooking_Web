@@ -81,6 +81,21 @@ CREATE TABLE tbl_GiaoDich(
 );
 go
 
+CREATE OR ALTER VIEW vw_DanhSachTaiKhoan AS
+SELECT tk.TaiKhoanID,
+		tk.HoTen,
+		tk.DiaChi,
+		tk.Email,
+		vt.TenVaiTro,
+		tk.SoDienThoai,
+		tk.Create_at,
+		tk.isDelete,
+		tk.Delete_at,
+		tk.Update_at
+FROM tbl_TaiKhoan tk
+JOIN tbl_VaiTro vt ON tk.VaiTroID= vt.VaiTroID
+GO
+
 CREATE OR ALTER VIEW vw_DanhSachPhong AS
 SELECT P.PhongID,
 		P.SoPhong,
