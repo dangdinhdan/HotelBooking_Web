@@ -63,6 +63,7 @@ namespace HotelBooking_Web.Models
         {
             OnCreated();
         }
+
         public DataClasses1DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
@@ -2334,6 +2335,8 @@ namespace HotelBooking_Web.Models
 		
 		private string _TenVaiTro;
 		
+		private int _VaiTroID;
+		
 		private string _SoDienThoai;
 		
 		private System.Nullable<System.DateTime> _Create_at;
@@ -2424,6 +2427,22 @@ namespace HotelBooking_Web.Models
 				if ((this._TenVaiTro != value))
 				{
 					this._TenVaiTro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VaiTroID", DbType="Int NOT NULL")]
+		public int VaiTroID
+		{
+			get
+			{
+				return this._VaiTroID;
+			}
+			set
+			{
+				if ((this._VaiTroID != value))
+				{
+					this._VaiTroID = value;
 				}
 			}
 		}

@@ -92,10 +92,10 @@
         <elementListCompartment Id="1ecc24cc-3019-48ea-9fa9-0f8964cb34f6" absoluteBounds="14.14, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4ebbcc98-37be-4658-b478-dc0a27f584a2" absoluteBounds="12, 4.625, 2, 2.7324039713541666">
+    <classShape Id="e719f649-b1a0-4129-9695-f012a1d2c689" absoluteBounds="12, 4.25, 2, 2.9247054036458331">
       <DataClassMoniker Name="/DataClasses1DataContext/vw_DanhSachTaiKhoan" />
       <nestedChildShapes>
-        <elementListCompartment Id="dd493f9f-c8a3-4d90-a96a-132534a24922" absoluteBounds="12.015, 5.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fae801ef-4322-47f3-aa4c-44558557278d" absoluteBounds="12.015, 4.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

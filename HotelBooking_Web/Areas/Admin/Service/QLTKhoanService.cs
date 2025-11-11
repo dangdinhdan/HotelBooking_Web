@@ -1,9 +1,11 @@
-﻿using HotelBooking_Web.Models;
+﻿using HotelBooking_Web.Areas.Admin.ViewModel;
+using HotelBooking_Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Web;
+using System.Web.Helpers;
 
 namespace HotelBooking_Web.Areas.Admin.Service
 {
@@ -63,26 +65,26 @@ namespace HotelBooking_Web.Areas.Admin.Service
 
 
 
-        public FunctResult<tbl_Phong> Sua(int id, string SoPhong, int LoaiPhongID, decimal GiaMoiDem, int SucChuaToiDa, string MoTa, string HinhAnh)
+        public FunctResult<tbl_TaiKhoan> Sua(int TaiKhoanID ,string HoTen, string DiaChi, string Email, string SoDienThoai, string MatKhau, int VaiTroID)
         {
-            FunctResult<tbl_Phong> rs = new FunctResult<tbl_Phong>();
+            FunctResult<tbl_TaiKhoan> rs = new FunctResult<tbl_TaiKhoan>();
 
             try
             {
                 //cố gắng lấy ra lớp quản lý có mã lớp là maLopQL
-                var qr = db.tbl_Phongs.Where(o => o.PhongID == id && (o.isDelete == null || o.isDelete == false));
+                var qr = db.tbl_TaiKhoans.Where(o => o.TaiKhoanID == TaiKhoanID && (o.isDelete == null || o.isDelete == false));
 
                 if (qr.Any())
                 {
                     //trường hợp lấy ra được dữ liệu lớp quản lý cần sửa
-                    tbl_Phong old_obj = qr.SingleOrDefault();
+                    tbl_TaiKhoan old_obj = qr.SingleOrDefault();
 
-                    old_obj.SoPhong = SoPhong ?? old_obj.SoPhong;
-                    old_obj.LoaiPhongID = LoaiPhongID;
-                    old_obj.GiaMoiDem = GiaMoiDem;
-                    old_obj.SucChuaToiDa = SucChuaToiDa;
-                    old_obj.MoTa = MoTa ?? old_obj.MoTa;
-                    old_obj.HinhAnh = HinhAnh ?? old_obj.HinhAnh;
+                    old_obj.HoTen = HoTen ?? old_obj.HoTen;
+                    old_obj.Email = Email;
+                    old_obj.SoDienThoai = SoDienThoai;
+                    old_obj.MatKhau = MatKhau ?? old_obj.MatKhau;
+                    old_obj.DiaChi = DiaChi ?? old_obj.DiaChi;
+                    old_obj.VaiTroID = VaiTroID;
                     old_obj.Update_at = DateTime.Now;
 
 
@@ -90,14 +92,14 @@ namespace HotelBooking_Web.Areas.Admin.Service
 
 
                     rs.ErrCode = EnumErrCode.Success;
-                    rs.ErrDesc = "Chỉnh sửa thông tin phòng thành công";
+                    rs.ErrDesc = "Chỉnh sửa thông tin thành công";
                 }
                 else
                 {
                     //trường hợp không tìm thấy lớp quản lý cần sửa
 
                     rs.ErrCode = EnumErrCode.NotExist;
-                    rs.ErrDesc = "Không tìm thấy phòng cần sửa";
+                    rs.ErrDesc = "Không tìm thấy tài khoản cần sửa";
                 }
 
             }
@@ -105,7 +107,7 @@ namespace HotelBooking_Web.Areas.Admin.Service
             {
                 //nếu lấy ds lớp quản lý lỗi thì trả ra fail
                 rs.ErrCode = EnumErrCode.Error;
-                rs.ErrDesc = "Có lỗi xảy ra trong quá trình chỉnh sửa dữ liệu phòng. Chi tiết lỗi: " + ex.Message;
+                rs.ErrDesc = "Có lỗi xảy ra trong quá trình chỉnh sửa dữ liệu. Chi tiết lỗi: " + ex.Message;
 
             }
 
@@ -115,53 +117,52 @@ namespace HotelBooking_Web.Areas.Admin.Service
 
 
 
-        public PhongViewModel LayThongTinViewSua(int id)
+        public TaiKhoanViewModel LayThongTinViewSua(int id)
         {
-            var phong = db.tbl_Phongs.FirstOrDefault(x => x.PhongID == id);
-            if (phong == null)
+            var taiKhoan = db.vw_DanhSachTaiKhoans.FirstOrDefault(x => x.TaiKhoanID == id);
+            if (taiKhoan == null)
             {
                 return null;
             }
 
-            var loaiPhong = db.tbl_LoaiPhongs.FirstOrDefault(x => x.LoaiPhongID == phong.LoaiPhongID);
-            var dsLoaiPhong = db.tbl_LoaiPhongs.Where(x => x.isDelete == null || x.isDelete == false).ToList();
+            var list = db.tbl_VaiTros.Where(x => x.isDelete == null || x.isDelete == false).ToList();
 
-            return new PhongViewModel
+            return new TaiKhoanViewModel
             {
-                Phong = phong,
-                LoaiPhong = loaiPhong,
-                DSLP = dsLoaiPhong
+                taikhoan = taiKhoan,
+                DSVT = list
             };
         }
 
 
-        public FunctResult<tbl_Phong> Xoa(int id)
+        public FunctResult<tbl_TaiKhoan> Xoa(int id)
         {
-            FunctResult<tbl_Phong> rs = new FunctResult<tbl_Phong>();
+            FunctResult<tbl_TaiKhoan> rs = new FunctResult<tbl_TaiKhoan>();
             try
             {
-                var qr = db.tbl_Phongs.Where(o => o.PhongID == id && (o.isDelete == null || o.isDelete == false));
+                //cố gắng lấy ra tài khoản có email là 
+                var qr = db.tbl_TaiKhoans.Where(o => o.TaiKhoanID == id && (o.isDelete == null || o.isDelete == false));
                 if (qr.Any())
                 {
-                    tbl_Phong del_obj = qr.SingleOrDefault();
+                    tbl_TaiKhoan del_obj = qr.SingleOrDefault();
                     del_obj.isDelete = true;
                     del_obj.Delete_at = DateTime.Now;
                     db.SubmitChanges();
                     rs.ErrCode = EnumErrCode.Success;
-                    rs.ErrDesc = "Xóa phòng thành công";
+                    rs.ErrDesc = "Xóa thành công";
 
                 }
                 else
                 {
                     rs.ErrCode = EnumErrCode.NotExist;
-                    rs.ErrDesc = "không tìm thấy phòng cần xóa";
+                    rs.ErrDesc = "không tìm tài khoản cần xóa";
 
                 }
             }
             catch (Exception ex)
             {
                 rs.ErrCode = EnumErrCode.Error;
-                rs.ErrDesc = "có lỗi trong quá trình xóa phòng";
+                rs.ErrDesc = "có lỗi trong quá trình xóa";
 
             }
             return rs;

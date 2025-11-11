@@ -124,7 +124,8 @@
                         var rs = JSON.parse(response);
                         if (rs.ErrCode == 1) {
 
-                            $('#trow_' + id).remove();
+                            //$('#trow_' + id).remove();
+                             
                             alert(rs.ErrDesc);
                         }
                         else {
