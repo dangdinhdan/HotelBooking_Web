@@ -92,5 +92,11 @@
         <elementListCompartment Id="1ecc24cc-3019-48ea-9fa9-0f8964cb34f6" absoluteBounds="14.14, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="4ebbcc98-37be-4658-b478-dc0a27f584a2" absoluteBounds="12, 4.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClasses1DataContext/vw_DanhSachTaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd493f9f-c8a3-4d90-a96a-132534a24922" absoluteBounds="12.015, 5.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

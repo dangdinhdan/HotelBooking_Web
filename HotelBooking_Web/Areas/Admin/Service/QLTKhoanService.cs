@@ -1,52 +1,51 @@
 ﻿using HotelBooking_Web.Models;
-using PagedList;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
-
 
 namespace HotelBooking_Web.Areas.Admin.Service
 {
-
-    public class QLPhongService
+    public class QLTKhoanService
     {
         private DataClasses1DataContext db = new DataClasses1DataContext();
-        public FunctResult<tbl_Phong> Them(string SoPhong, int LoaiPhongID, decimal GiaMoiDem, int SucChuaToiDa, string MoTa, string HinhAnh)
+
+
+        public FunctResult<tbl_TaiKhoan> Them(string HoTen, string DiaChi, string Email,string SoDienThoai, string MatKhau,int VaiTroID)
         {
-            FunctResult<tbl_Phong> rs = new FunctResult<tbl_Phong>();
+            FunctResult<tbl_TaiKhoan> rs = new FunctResult<tbl_TaiKhoan>();
 
             try
             {
-                //cố gắng lấy ra lớp quản lý có mã lớp là maLopQL
-                var qr = db.tbl_Phongs.Where(o => o.SoPhong == SoPhong && (o.isDelete == null || o.isDelete == false));
+                //cố gắng lấy ra tài khoản có email là 
+                var qr = db.tbl_TaiKhoans.Where(o => o.Email == Email && (o.isDelete == null || o.isDelete == false));
 
                 if (!qr.Any())
                 {
-                    //trường hợp chưa có lớp quản lý nào có mã lớp = maLopQL
-                    tbl_Phong new_obj = new tbl_Phong();
-                    new_obj.SoPhong = SoPhong;
-                    new_obj.LoaiPhongID = LoaiPhongID;
-                    new_obj.GiaMoiDem = GiaMoiDem;
-                    new_obj.SucChuaToiDa = SucChuaToiDa;
-                    new_obj.MoTa = MoTa;
-                    new_obj.HinhAnh = HinhAnh;
+                    //trường hợp chưa có email tồn tại
+                    tbl_TaiKhoan new_obj = new tbl_TaiKhoan();
+                    new_obj.HoTen = HoTen;
+                    new_obj.DiaChi = DiaChi;
+                    new_obj.Email = Email;
+                    new_obj.SoDienThoai = SoDienThoai;
+                    new_obj.MatKhau = MatKhau;
+                    new_obj.VaiTroID = VaiTroID;
 
                     new_obj.Create_at = DateTime.Now;
 
-                    db.tbl_Phongs.InsertOnSubmit(new_obj);
+                    db.tbl_TaiKhoans.InsertOnSubmit(new_obj);
                     db.SubmitChanges();
 
                     rs.ErrCode = EnumErrCode.Success;
-                    rs.ErrDesc = "Thêm mới phòng thành công";
+                    rs.ErrDesc = "Thêm mới thành công";
 
                 }
                 else
                 {
                     //trường hợp đã tồn tại lớp quản lý có mã lớp = maLopQL
                     rs.ErrCode = EnumErrCode.Existent;
-                    rs.ErrDesc = "Thêm mới phòng thất bại do đã tồn tại lớp quản lý có mã = " + SoPhong;
+                    rs.ErrDesc = "Thêm mới thất bại do đã tồn tại Email = " + Email;
 
                 }
 
@@ -55,7 +54,7 @@ namespace HotelBooking_Web.Areas.Admin.Service
             {
                 //nếu lấy ds lớp quản lý lỗi thì trả ra fail
                 rs.ErrCode = EnumErrCode.Error;
-                rs.ErrDesc = "Có lỗi xảy ra trong quá trình thêm mới phòng. Chi tiết lỗi: " + ex.Message;
+                rs.ErrDesc = "Có lỗi xảy ra trong quá trình thêm mới. Chi tiết lỗi: " + ex.Message;
 
             }
 
@@ -167,21 +166,20 @@ namespace HotelBooking_Web.Areas.Admin.Service
             }
             return rs;
         }
-    
 
-        public List<vw_DanhSachPhong> Search(string query)
-        { 
-            var rooms = db.vw_DanhSachPhongs.Where(x => x.isDelete == null || x.isDelete == false);
+
+        public List<vw_DanhSachTaiKhoan> Search(string query)
+        {
+            var list = db.vw_DanhSachTaiKhoans.Where(x => x.isDelete == null || x.isDelete == false);
 
             if (!string.IsNullOrEmpty(query))
             {
-                rooms = rooms.Where(x => x.SoPhong.Contains(query) || x.TenLoaiPhong.Contains(query)
-                );
+                list = list.Where(x => x.HoTen.Contains(query) || x.Email.Contains(query)|| x.SoDienThoai.Contains(query));
             }
-            
-            return rooms.ToList() ;
 
-          
+            return list.ToList();
+
+
         }
     }
 }

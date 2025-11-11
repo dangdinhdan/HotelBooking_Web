@@ -18,13 +18,16 @@ namespace HotelBooking_Web.Areas.Admin.Controllers
         private DataClasses1DataContext db = new DataClasses1DataContext();
         private QLPhongService service = new QLPhongService();
 
-        public ActionResult Index(int? page)
+        public ActionResult Index(string query, int? page)
         {
             var pageSize = 10;
             int pageIndex = page ?? 1;
-            
-            var items = db.vw_DanhSachPhongs.Where(x => x.isDelete == null || x.isDelete == false).OrderByDescending(x=>x.PhongID).ToPagedList(pageIndex, pageSize);
-            
+
+            var rooms = service.Search(query);
+
+            var items = rooms
+                .OrderByDescending(x => x.PhongID).ToPagedList(pageIndex, pageSize);
+
             return View(items);
         }
 

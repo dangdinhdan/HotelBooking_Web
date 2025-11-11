@@ -41,7 +41,7 @@ CREATE TABLE tbl_Phong(
 	PhongID INT PRIMARY KEY IDENTITY(1,1),
 	SoPhong VARCHAR(10) NOT NULL,
 	LoaiPhongID INT NOT NULL REFERENCES tbl_LoaiPhong(LoaiPhongID),
-	GiaMoiDem DECIMAL(18,2) NOT NULL CHECK(GiaMoiDem > 0) DEFAULT 0,
+	GiaMoiDem DECIMAL(18,2) NOT NULL CHECK(GiaMoiDem >= 0) DEFAULT 0,
 	SucChuaToiDa INT CHECK(SucChuaToiDa > 0) DEFAULT 1,
 	MoTa NVARCHAR(4000),
 	TrangThai NVARCHAR(50) DEFAULT 'Trong',
@@ -57,11 +57,12 @@ CREATE TABLE tbl_DatPhong(
 	TaiKhoanID INT NOT NULL REFERENCES tbl_TaiKhoan(TaiKhoanID),
 	NgayDat DATETIME2 DEFAULT SYSUTCDATETIME(),
 	NgayNhanPhong DATETIME2 NOT NULL,
-	NgayTraPhong DATETIME2 NOT NULL,
+	NgayTraPhong DATETIME2 NOT NULL ,
 	SoLuongNguoi INT,
 	TongTien DECIMAL(18,2),
 	TrangThai NVARCHAR(50),
 	GhiChu NVARCHAR(2000),
+	CONSTRAINT CHK_NgayTraPhong CHECK (NgayTraPhong > NgayNhanPhong)
 );
 
 CREATE TABLE tbl_ChiTietDatPhong(

@@ -145,6 +145,14 @@ namespace HotelBooking_Web.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<vw_DanhSachTaiKhoan> vw_DanhSachTaiKhoans
+		{
+			get
+			{
+				return this.GetTable<vw_DanhSachTaiKhoan>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_TimPhongTrong")]
 		public ISingleResult<sp_TimPhongTrongResult> sp_TimPhongTrong([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayNhanPhong", DbType="DateTime2")] System.Nullable<System.DateTime> ngayNhanPhong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayTraPhong", DbType="DateTime2")] System.Nullable<System.DateTime> ngayTraPhong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SucChuaToiDa", DbType="Int")] System.Nullable<int> sucChuaToiDa)
 		{
@@ -2307,6 +2315,195 @@ namespace HotelBooking_Web.Models
 				if ((this._TenLoaiPhong != value))
 				{
 					this._TenLoaiPhong = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_DanhSachTaiKhoan")]
+	public partial class vw_DanhSachTaiKhoan
+	{
+		
+		private int _TaiKhoanID;
+		
+		private string _HoTen;
+		
+		private string _DiaChi;
+		
+		private string _Email;
+		
+		private string _TenVaiTro;
+		
+		private string _SoDienThoai;
+		
+		private System.Nullable<System.DateTime> _Create_at;
+		
+		private System.Nullable<bool> _isDelete;
+		
+		private System.Nullable<System.DateTime> _Delete_at;
+		
+		private System.Nullable<System.DateTime> _Update_at;
+		
+		public vw_DanhSachTaiKhoan()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaiKhoanID", DbType="Int NOT NULL")]
+		public int TaiKhoanID
+		{
+			get
+			{
+				return this._TaiKhoanID;
+			}
+			set
+			{
+				if ((this._TaiKhoanID != value))
+				{
+					this._TaiKhoanID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(255)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this._DiaChi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenVaiTro", DbType="NVarChar(50)")]
+		public string TenVaiTro
+		{
+			get
+			{
+				return this._TenVaiTro;
+			}
+			set
+			{
+				if ((this._TenVaiTro != value))
+				{
+					this._TenVaiTro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string SoDienThoai
+		{
+			get
+			{
+				return this._SoDienThoai;
+			}
+			set
+			{
+				if ((this._SoDienThoai != value))
+				{
+					this._SoDienThoai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Create_at", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> Create_at
+		{
+			get
+			{
+				return this._Create_at;
+			}
+			set
+			{
+				if ((this._Create_at != value))
+				{
+					this._Create_at = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isDelete", DbType="Bit")]
+		public System.Nullable<bool> isDelete
+		{
+			get
+			{
+				return this._isDelete;
+			}
+			set
+			{
+				if ((this._isDelete != value))
+				{
+					this._isDelete = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Delete_at", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> Delete_at
+		{
+			get
+			{
+				return this._Delete_at;
+			}
+			set
+			{
+				if ((this._Delete_at != value))
+				{
+					this._Delete_at = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Update_at", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> Update_at
+		{
+			get
+			{
+				return this._Update_at;
+			}
+			set
+			{
+				if ((this._Update_at != value))
+				{
+					this._Update_at = value;
 				}
 			}
 		}

@@ -132,6 +132,7 @@
     <Compile Include="Areas\Admin\Controllers\QLLPhongController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLPhongController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTKhoanController.cs" />
+    <Compile Include="Areas\Admin\Service\QLTKhoanService.cs" />
     <Compile Include="Areas\Admin\Service\QLLPhongService.cs" />
     <Compile Include="Areas\Admin\Service\QLPhongService.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -232,6 +233,8 @@
     <Content Include="Areas\Admin\Views\QLLPhong\Them.cshtml" />
     <Content Include="Areas\Admin\Views\QLLPhong\Index.cshtml" />
     <Content Include="Areas\Admin\Views\QLLPhong\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\QLTKhoan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLTKhoan\Them.cshtml" />
     <None Include="Models\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
@@ -269,7 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\QLTKhoan\" />
+    <Folder Include="Areas\Admin\Views\QLTKhoanService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
