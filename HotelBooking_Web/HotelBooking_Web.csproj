@@ -205,6 +205,7 @@
     <Content Include="Areas\Admin\Content\Client\css\adminlte.min.css" />
     <Content Include="Areas\Admin\Content\Client\css\adminlte.rtl.css" />
     <Content Include="Areas\Admin\Content\Client\css\adminlte.rtl.min.css" />
+    <Content Include="Content\css01\style.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -253,6 +254,7 @@
     <Content Include="Areas\Admin\Scripts\js\adminlte.js" />
     <Content Include="Areas\Admin\Scripts\js\adminlte.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\No1JavaScript\script01.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
