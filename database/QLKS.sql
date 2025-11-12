@@ -81,6 +81,8 @@ CREATE TABLE tbl_GiaoDich(
 );
 go
 
+
+
 CREATE OR ALTER VIEW vw_DanhSachTaiKhoan AS
 SELECT tk.TaiKhoanID,
 		tk.HoTen,

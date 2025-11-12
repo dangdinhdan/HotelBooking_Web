@@ -147,6 +147,8 @@
 <script>
     $("#btn_timkiem").click(function () {
         var query = $("#txt_query").val();
+        
+        alert(query)
         window.location.href = "/Admin/QLPhong/Index?query=" + encodeURIComponent(query);
     });
 </script>
