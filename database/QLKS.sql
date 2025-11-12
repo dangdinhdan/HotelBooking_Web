@@ -15,6 +15,7 @@ CREATE TABLE tbl_VaiTro(
 
 CREATE TABLE tbl_TaiKhoan(
 	TaiKhoanID INT PRIMARY KEY IDENTITY(1,1),
+	MaTK AS ('TK' + RIGHT('000000' + CAST(TaiKhoanID AS VARCHAR(10)), 3)) PERSISTED,
 	HoTen NVARCHAR(100) NOT NULL,
 	Email VARCHAR(100) NOT NULL ,
 	MatKhau VARCHAR(255),
@@ -82,6 +83,26 @@ CREATE TABLE tbl_GiaoDich(
 go
 
 
+
+CREATE OR ALTER VIEW vw_DanhSachDatPhong AS
+SELECT DP.DatPhongID,
+	DP.NgayDat,
+	DP.NgayNhanPhong,
+	DP.NgayTraPhong,
+	DP.SoLuongNguoi,
+	DP.TongTien,
+	DP.TrangThai,
+	dp.GhiChu,
+	P.SoPhong,
+	P.PhongID,
+	DP.TaiKhoanID,
+	TK.MaTK
+
+FROM tbl_DatPhong DP
+JOIN tbl_ChiTietDatPhong CTDP ON DP.DatPhongID=CTDP.DatPhongID
+JOIN tbl_Phong P on P.PhongID= CTDP.PhongID
+JOIN tbl_TaiKhoan TK on DP.TaiKhoanID =TK.TaiKhoanID 
+GO
 
 CREATE OR ALTER VIEW vw_DanhSachTaiKhoan AS
 SELECT tk.TaiKhoanID,

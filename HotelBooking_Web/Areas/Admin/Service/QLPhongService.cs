@@ -12,6 +12,31 @@ namespace HotelBooking_Web.Areas.Admin.Service
 
     public class QLPhongService
     {
+        private static QLPhongService _instance;
+        private static readonly object _lock = new object();
+
+        // Constructor private ngăn tạo mới
+        private QLPhongService() { }
+
+        // Thuộc tính truy cập duy nhất
+        public static QLPhongService Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (_lock)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new QLPhongService();
+                        }
+                    }
+                }
+                return _instance;
+            }
+        }
+
         private DataClasses1DataContext db = new DataClasses1DataContext();
         public FunctResult<tbl_Phong> Them(string SoPhong, int LoaiPhongID, decimal GiaMoiDem, int SucChuaToiDa, string MoTa, string HinhAnh)
         {
