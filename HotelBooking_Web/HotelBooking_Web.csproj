@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLDPController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLLPhongController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLPhongController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTKhoanController.cs" />
@@ -237,6 +238,7 @@
     <Content Include="Areas\Admin\Views\QLTKhoan\Index.cshtml" />
     <Content Include="Areas\Admin\Views\QLTKhoan\Them.cshtml" />
     <Content Include="Areas\Admin\Views\QLTKhoan\Sua.cshtml" />
+    <Content Include="Areas\Admin\Views\QLDP\Index.cshtml" />
     <None Include="Models\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
