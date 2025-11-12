@@ -13,5 +13,13 @@ namespace HotelBooking_Web.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult CheckIn()
+        {
+            return View();
+        }
+        public ActionResult CheckOut()
+        {
+            return View();
+        }
     }
 }

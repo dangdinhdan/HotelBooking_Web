@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Workspace\\c#\\HotelBooking_Web\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8723AE42-7D43-454E-961C-8CB22047BBFA}|HotelBooking_Web\\HotelBooking_Web.csproj|d:\\workspace\\c#\\hotelbooking_web\\hotelbooking_web\\areas\\admin\\views\\qldp\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8723AE42-7D43-454E-961C-8CB22047BBFA}|HotelBooking_Web\\HotelBooking_Web.csproj|solutionrelative:hotelbooking_web\\areas\\admin\\views\\qldp\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8723AE42-7D43-454E-961C-8CB22047BBFA}|HotelBooking_Web\\HotelBooking_Web.csproj|d:\\workspace\\c#\\hotelbooking_web\\hotelbooking_web\\areas\\admin\\controllers\\qldpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8723AE42-7D43-454E-961C-8CB22047BBFA}|HotelBooking_Web\\HotelBooking_Web.csproj|solutionrelative:hotelbooking_web\\areas\\admin\\controllers\\qldpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Views\\QLDP\\Index.cshtml",
+              "RelativeDocumentMoniker": "HotelBooking_Web\\Areas\\Admin\\Views\\QLDP\\Index.cshtml",
+              "ToolTip": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Views\\QLDP\\Index.cshtml",
+              "RelativeToolTip": "HotelBooking_Web\\Areas\\Admin\\Views\\QLDP\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T16:19:58.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Views\\QLPhong\\Index.cshtml",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Areas\\Admin\\Views\\QLPhong\\Index.cshtml",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "QLPhongService.cs",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Service\\QLPhongService.cs",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Areas\\Admin\\Service\\QLPhongService.cs",
@@ -68,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "QLPhongController.cs",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Controllers\\QLPhongController.cs",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Areas\\Admin\\Controllers\\QLPhongController.cs",
@@ -81,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "QLDPController.cs",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Controllers\\QLDPController.cs",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Areas\\Admin\\Controllers\\QLDPController.cs",
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Web.config",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Web.config",
@@ -107,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DataClasses1.designer.cs",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Models\\DataClasses1.designer.cs",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Models\\DataClasses1.designer.cs",
@@ -119,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Workspace\\c#\\HotelBooking_Web\\HotelBooking_Web\\Areas\\Admin\\Views\\QLLPhong\\Index.cshtml",
               "RelativeDocumentMoniker": "HotelBooking_Web\\Areas\\Admin\\Views\\QLLPhong\\Index.cshtml",
