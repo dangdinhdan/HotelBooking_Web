@@ -47,8 +47,7 @@
               "RelativeToolTip": "HotelBooking_Web\\Models\\DataClasses1.designer.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T17:53:45.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T17:53:45.678Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "HotelBooking_Web\\Areas\\Admin\\Views\\QLLPhong\\Index.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-29T17:32:46.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T17:32:46.831Z"
             }
           ]
         }
