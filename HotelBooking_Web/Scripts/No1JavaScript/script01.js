@@ -62,8 +62,8 @@ const ROOMS = [
     },
 ];
 
-/* --- Gắn năm hiện tại vào footer --- */
-document.getElementById("year").textContent = new Date().getFullYear();
+///* --- Gắn năm hiện tại vào footer --- */
+//document.getElementById("year").textContent = new Date().getFullYear();
 
 /* --- Hàm hiển thị danh sách phòng --- */
 const roomsGrid = document.getElementById("roomsGrid");
@@ -137,6 +137,42 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     document.getElementById("rooms").scrollIntoView({
         behavior: "smooth",
         block: "start",
+    });
+});
+
+/* --- SCROLL MƯỢT THÔNG MINH CHO MVC --- */
+document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        // Lấy phần đường dẫn (path) và phần ID (hash)
+        const currentPath = window.location.pathname; // Ví dụ: "/" hoặc "/Home/Index"
+        const linkHref = this.getAttribute('href'); // Ví dụ: "/#rooms"
+
+        // Tách dấu # ra: ["/", "rooms"]
+        const [path, hash] = linkHref.split('#');
+
+        // Kiểm tra: Nếu link trỏ về cùng trang hiện tại (hoặc là trang chủ /)
+        if ((path === "" || path === "/" || path === currentPath) && hash) {
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                e.preventDefault(); // Ngừng chuyển trang, chỉ cuộn thôi
+
+                if (hash === "top") {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                } else {
+                    const headerOffset = 80; // Chỉnh số này bằng chiều cao menu của bạn
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        }
     });
 });
 
